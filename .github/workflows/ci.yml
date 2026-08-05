@@ -1,0 +1,21 @@
+name: Mi primer pipeline CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  verificar:
+    name: Verificar repositorio
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar codigo
+        uses: actions/checkout@v7
+
+      - name: Mostrar mensaje
+        run: echo "La integracion continua esta funcionando"
+
+      - name: Verificar que README no este vacio
+        run: test -s README.md
