@@ -1,4 +1,4 @@
-name: Mi primer pipeline CI
+name: Mi primer pipeline CI-CD
 
 on:
   push:
@@ -19,3 +19,12 @@ jobs:
 
       - name: Verificar que README no este vacio
         run: test -s README.md
+
+  desplegar:
+    name: Simular despliegue
+    needs: verificar
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Mostrar despliegue
+        run: echo "El despliegue simulado termino correctamente"
