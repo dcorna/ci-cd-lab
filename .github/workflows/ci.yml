@@ -1,10 +1,11 @@
 name: Mi primer pipeline CI-CD
-
 on:
   push:
     branches:
       - main
-
+  pull_request:
+    branches:
+      - main
 jobs:
   verificar:
     name: Verificar repositorio
